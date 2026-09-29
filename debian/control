@@ -1,9 +1,15 @@
 Source: vyatta-tech-support
-Section: contrib/net
-Priority: extra
-Maintainer: Vyatta Package Maintainers <DL-vyatta-help@att.com>
-Build-Depends: debhelper (>= 9), dh-python, dh-yang, python3
-Standards-Version: 3.9.6
+Section: net
+Priority: optional
+Maintainer: NuDanOS Maintainers <jon@fernandez.tech>
+Build-Depends: debhelper-compat (= 13),
+ dh-python,
+ dh-yang,
+ python3
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Vcs-Git: https://github.com/nudanos/vyatta-tech-support.git
+Vcs-Browser: https://github.com/nudanos/vyatta-tech-support
 
 Package: vyatta-op-tech-support-v1-yang
 Architecture: all
@@ -19,7 +25,7 @@ Description: Tech support collection feature
 
 Package: vyatta-tech-support
 Architecture: all
-Depends:
+Depends: 
  debsums,
  lsof,
  pciutils,
@@ -30,7 +36,7 @@ Depends:
  vyatta-op,
  ${misc:Depends},
  ${python3:Depends}
-Breaks:
+Breaks: 
  vplane-config (<< 2.49),
  vplane-config-npf (<< 1.13.2),
  vplane-config-qos (<< 2.4.1),
